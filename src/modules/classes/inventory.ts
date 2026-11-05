@@ -8,8 +8,20 @@ class Inventory {
         inventory: Item[],
         item: Item | BaseItem
     ) {
+        for (let inventoryItem of inventory) {
+            if (item.name == inventoryItem.name) {
+                inventoryItem.amount += item.amount
+                return
+            }
+        }
         if (item instanceof BaseItem) {
-
+            inventory.push(item.toObject())
+            return
+        } else if (item instanceof Item) {
+            inventory.push(item)
+            return
         }
     }
 }
+
+export default Inventory
