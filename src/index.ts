@@ -3,10 +3,6 @@ import {
     GatewayIntentBits
 } from 'discord.js'
 
-import {
-    intents,
-    prefix
-} from './botSettings.ts'
 import Logger from './utils/logger.ts'
 import loadCommands from './loaders/commandLoader.ts'
 
