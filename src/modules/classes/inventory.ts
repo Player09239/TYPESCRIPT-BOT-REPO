@@ -17,8 +17,8 @@ class Inventory {
         if (item instanceof BaseItem) {
             inventory.push(item.toObject())
             return
-        } else if (item instanceof Item) {
-            inventory.push(item)
+        } else {
+            inventory.push(item as Item)
             return
         }
     }
