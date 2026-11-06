@@ -7,19 +7,19 @@ class Inventory {
     static stack(
         inventory: Item[],
         item: Item | BaseItem
-    ) {
+    ): Item[] {
         for (let inventoryItem of inventory) {
             if (item.name == inventoryItem.name) {
                 inventoryItem.amount += item.amount
-                return
+                return inventory
             }
         }
         if (item instanceof BaseItem) {
             inventory.push(item.toObject())
-            return
+            return inventory
         } else {
             inventory.push(item as Item)
-            return
+            return inventory
         }
     }
 }

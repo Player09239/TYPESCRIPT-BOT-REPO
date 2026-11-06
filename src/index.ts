@@ -8,6 +8,7 @@ import loadCommands from './loaders/commandLoader.ts'
 
 import dotenv from 'dotenv'
 import type BaseCommand from './commands/baseCommand.ts'
+import { intents, prefix } from './botSettings.ts'
 
 dotenv.config()
 
