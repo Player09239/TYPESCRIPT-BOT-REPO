@@ -5,7 +5,7 @@ import {
 
 const UserSchema = new Schema(
     {
-        _id: { type: String, required: true, unique: true },
+        id: { type: String, required: true, unique: true },
         username: { type: String, required: true },
 
         coins: { type: Number, required: true, default: 0 },

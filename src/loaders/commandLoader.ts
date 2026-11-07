@@ -2,7 +2,8 @@ import type BaseCommand from "../commands/baseCommand.ts";
 import Logger from "../utils/logger.ts";
 
 const commandPaths: string[] = [
-    '../commands/prefix/test.ts'
+    '../commands/prefix/test.ts',
+    '../commands/prefix/coins.ts'
 ]
 export default async function loadCommands(): Promise<Map<string, BaseCommand>> {
     let commands: Map<string, BaseCommand> = new Map()
