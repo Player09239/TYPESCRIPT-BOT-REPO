@@ -1,10 +1,10 @@
 import { GatewayIntentBits } from "discord.js"
 
-declare const intents: GatewayIntentBits[] = [
+export const intents: GatewayIntentBits[] = [
     GatewayIntentBits.MessageContent,
     GatewayIntentBits.GuildMembers,
     GatewayIntentBits.Guilds,
     GatewayIntentBits.GuildMessages
 ]
-declare const prefix: string = '.'
+export const prefix: string = '.'
 
