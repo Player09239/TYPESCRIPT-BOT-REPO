@@ -22,6 +22,23 @@ class Inventory {
             return inventory
         }
     }
+
+    static take(
+        inventory: Item[],
+        itemToTake: Item | BaseItem
+    ): Item[] {
+        for (let inventoryKey in inventory) {
+            if (itemToTake.name == inventory[inventoryKey].name) {
+                inventory[inventoryKey].amount -= itemToTake.amount
+                if (inventory[inventoryKey].amount <= 0) {
+                    inventory.splice(Number(inventoryKey), 1)
+                }
+                return inventory
+            }
+        }
+
+        return inventory
+    }
 }
 
 export default Inventory

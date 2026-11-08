@@ -9,9 +9,8 @@ async function _e(msg: Message): Promise<Message> {
     Logger.OK('Command ran')
     let userData = await User.findOne({ id: msg.author.id })
 
-    const embed: EmbedBuilder = BuildEmbed.Normal(
-        'Balance',
-        `You currently have **${userData?.coins}** coins`
+    const embed: EmbedBuilder = BuildEmbed.Titleless(
+        `**${userData?.coins}** coins`
     )
 
     return msg.reply({ embeds: [embed] })

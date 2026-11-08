@@ -5,19 +5,30 @@ import {
     EmbedBuilder,
 } from 'discord.js'
 
+export type Field = {
+    name: string,
+    value: string,
+    inline?: boolean
+}
+
 class BuildEmbed {
 
     static Normal(
-        title: string,
+        title: string | undefined,
         text: string,
         color: ColorResolvable = '#FFFFFF',
-        fields: { name: string, value: string }[] = []
+        fields: Field[] = []
     ): EmbedBuilder {
-        return new EmbedBuilder()
-            .setTitle(title)
+        let embed = new EmbedBuilder()
             .setColor(color)
             .setDescription(text)
             .addFields(fields)
+
+        if (title !== undefined) {
+            embed.setTitle(title)
+        }
+
+        return embed
     }
 
     static Error(
@@ -34,7 +45,7 @@ class BuildEmbed {
         message: string
     ): EmbedBuilder {
         return this.Normal(
-            '',
+            undefined,
             message
         )
     }

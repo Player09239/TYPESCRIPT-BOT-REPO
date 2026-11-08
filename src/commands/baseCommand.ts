@@ -1,15 +1,21 @@
 import type { Message } from "discord.js"
+import { Type } from "typescript/unstable/sync"
+
+type Parameter = {
+    name: string,
+    type: string
+}
 
 class BaseCommand {
     name: string = ''
-    params: string[] = []
+    params: Parameter[] = []
     description: string = ''
     additionalInfo: Record<string, any> = {}
     executeFunction: CallableFunction 
 
     constructor(
         name: string,
-        params: string[],
+        params: Parameter[],
         description: string,
         executeFunction: CallableFunction,
         additionalInfo: Record<string, any> = {},
@@ -22,7 +28,12 @@ class BaseCommand {
     }
 
     execute(msg: Message) {
-        this.executeFunction(msg)
+        let args: string[] = msg.content.split(' ')
+        args.splice(0, 1)
+
+        for (let i = 0; i <= this.params.length; i++) {
+            // Finish
+        }
     }
 
     

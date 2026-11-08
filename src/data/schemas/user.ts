@@ -9,7 +9,14 @@ const UserSchema = new Schema(
         username: { type: String, required: true },
 
         coins: { type: Number, required: true, default: 0 },
-        inventory: { type: Array, required: true, default: [] }
+        inventory: { type: Array, required: true, default: [] },
+
+        slots: {
+            head: { type: Object, default: null },
+            chest: { type: Object, default: null },
+            legs: { type: Object, default: null },
+            foot: { type: Object, default: null }
+        }
     }
 )
 
