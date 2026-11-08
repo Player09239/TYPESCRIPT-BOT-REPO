@@ -11,7 +11,7 @@ async function _e(msg: Message): Promise<Message> {
 
     const embed: EmbedBuilder = BuildEmbed.Normal(
         'Balance',
-        `You currently have ${userData?.coins} coins`
+        `You currently have **${userData?.coins}** coins`
     )
 
     return msg.reply({ embeds: [embed] })
